@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>积分商城</title>
+    <link rel="stylesheet" href="res/css/head_title.css">
+    <link rel="stylesheet" href="res/css/mobile_foods_list.css">
+    <link rel="stylesheet" href="res/css/message.css">
+    <link rel="stylesheet" href="res/css/head_title.css"> 
+</head>
+
+<body  style="background:#ffffff">
+<script type="text/javascript" src="res/js/App.js"></script>
+<script type="text/javascript" src="res/js/HeadFoot.js"></script>
+<script type="text/javascript" src="res/js/public.js"></script>
+<script type="text/javascript" src="https://res.mall.10010.cn/jf-mall/res/mobile/js/Base.js?resVer=20171128111329"></script>
+<script type="text/javascript" src="res/js/jquery.min.js"></script>
+<script type="text/javascript" src="res/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="res/js/jquery.pubsub.min.js"></script>
+<script type="text/javascript" src="res/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="script/getcookie.js"></script>
+<script type="text/javascript">
+	var tel;
+    window.onload=function(){
+		checkCookie();
+		freshPresentList(3001);
+    }
+    function checkCookie()
+	{
+		tel=getCookie('name');;
+		if (tel!=null && tel!=""){
+			return 1;
+		}
+		else{
+			alert("当前登录已经失效，请重新登录");
+			window.location.href = "login.html";
+			return -1;
+		}
+	}
+    function freshPresentList(presentType) {
+        $(".foods_list .pro_list").empty();
+        $.ajax({
+        type: "post",
+        url: "http://110.64.69.104/IntegralSystemServer/query_Present.php",
+        dataType: "json",
+        async:true,
+        data:{
+            "type":presentType
+            },
+        success:function (result) {
+            var className = ""
+            for(var i = 0; i < result.length; i++)
+            {
+                if (i % 2 == 0) {
+                    className = "div_left";
+                } 
+                else {
+                    className = "div_right";
+                }
+                var str = '<div class="' + className + '" presentID="' + result[i][0] + '"><a id="' + result[i][0] + '"><img src="' + 'res/jpg_210/' + result[i][0] + '.jpg"><p class="pro_nm">' + result[i][1] + '</p><p class="int_jf">' + result[i][4] + '积分</p></a></div>';
+                $(".foods_list .pro_list").append(str);
+                var tid = result[i][0];
+                document.getElementById(tid).onclick=function(){
+                    exchange_Present(tel, this.id);
+                }
+            }
+        },
+        error:function(result){
+            alert("获取列表失败");
+        }
+    });
+    }
+    
+    
+    function disappear() {
+        var ui = document.getElementById("notice_");//.style.display="none";
+        ui.style.display="none";
+    }
+    
+    function exchange_Present(telephone, presentID) {
+		$.ajax({
+			type: "post",
+			url: "http://110.64.69.104/IntegralSystemServer/exchange_Present.php",
+			dataType: "json",
+			async:true,
+			data:{
+				"tel":telephone,
+				"presentID":presentID
+				},
+			success:function (result) {
+				//alert("TTT");
+				if(result['status'] == 0)
+				{
+					alert("兑换成功");
+				}
+			
+				if(result['status'] == -1)
+				{
+					alert("兑换失败！积分不足");
+				}
+			},
+			error:function(result){
+				alert("网络错误");
+			}
+		});
+    }
+</script>
+
+    <div class="foods_list">
+        <a href="javascript:void(0)" class="goTop" id="top" style="display: none;"></a>
+        <div id="list_box">
+        
+        <div class="top-nav" id="mydiv">
+            <ul class="order_type">
+                <li class="li_3001" state="0" onclick=freshPresentList(3001)><p class="no_class">自有类</p></li>
+                <li class="li_3002" state="0" onclick=freshPresentList(3002)><p class="go_no">合作类</p></li>
+                <li class="li_3003" state="0" onclick=freshPresentList(3003)><p class="go_no">实物类</p></li>
+            </ul>
+        </div>
+        
+            <div class="pro_list" style="display: block;">
+            </div>
+            <p class="bottom_order" id="f-loading" style="display: none"><i></i><span>已加载完全部商品</span></p>
+            <p class="bottom_order" id="s-loading" style="display: none"><i></i><span>点击加载更多</span></p>
+            <p class="bottom_order" id="w-loading"><i></i><span><img src="https://res.mall.10010.cn/jf-mall/res/mobile/images/waitFor.gif?resVer=20171128111329" alt="" /></span></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

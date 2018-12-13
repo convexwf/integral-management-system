@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>兑换记录</title>
+    <link rel="stylesheet" href="Content/my/style.css" />
+    <link rel="stylesheet" href="Content/my/index.css" />
+    <link rel="stylesheet" href="Content/my/mui.min.css" />
+    <script type="text/javascript" src="script/jquery-2.0.0.min.js"></script>   
+    <script type="text/javascript" src="script/FormHelper.js"></script>
+    <script type="text/javascript" src="script/getcookie.js"></script>
+</head>
+<body>
+	<table  class="imagetable" width="100%">
+		<tr>
+			<th>兑换记录</th>
+		</tr>
+	</table>
+
+<script>
+    window.onload = function(){
+	checkCookie();
+	$.ajax({
+        type: "POST",
+        url: "http://110.64.69.104/IntegralSystemServer/query_ICR.php",	/*查询积分记录*/
+        dataType: "json",
+        async:true,
+		data:{"tel":tel},
+        success:function (result){ /*返回流水号，日期，积分变化，*/
+			for(var i = 0; i < result.length; i++){
+				//var str = '<div>aaaaaa</div>';
+				var str = '<tr><td>流水号：' + result[i][0] + "<br/>修改日期："+ result[i][1]+ "<br/>积分变化："+ result[i][2]+'<br/>变化原因：'+ result[i][3]+'</td></tr>';
+				$(".imagetable ").append(str);
+			}
+        },
+        error:function(result){
+            alert("wrong");
+        }
+    });
+	function checkCookie()
+	{
+		tel=getCookie('name');
+		//alert(tel);
+		if (tel!=null && tel!=""){
+			return 1;
+		}
+		else{
+			alert("当前登录已经失效，请重新登录");
+			window.location.href = "login.html";
+			return -1;
+		
+		}		
+	}
+}    
+</script>
+</body>

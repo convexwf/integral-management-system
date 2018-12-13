@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>充值</title>
+    <link rel="stylesheet" href="Content/my/style.css" />
+    <link rel="stylesheet" href="Content/my/index.css" />
+    <link rel="stylesheet" href="Content/my/mui.min.css" />
+    <script type="text/javascript" src="script/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="script/FormHelper.js"></script>
+	<script type="text/javascript" src="script/mycharge_telNum.js"></script>
+	<script type="text/javascript" src="script/getcookie.js"></script>
+
+</head>		
+<body  style="background:#ffffff">
+<script>
+	window.onload=function()
+	{
+		tel=getCookie('name');
+		//alert(tel);
+		if (tel!=null && tel!=""){
+			//$("#telNum").text(tel);
+			document.getElementById("telNum").value = tel;
+		}	
+	}	
+</script>
+	<div>
+		<marquee id="affiche" align="left" behavior="scroll" style="background: -webkit-linear-gradient(left,#84c1ff, #ffffff);" bgcolor="#dddddd" direction="left"  hspace="50" vspace="20" loop="-1" scrollamount="10" scrolldelay="100" onMouseOut="this.start()" onMouseOver="this.stop()">飞扬青春-回馈新用户活动正在进行，充值就送多倍积分！</marquee>
+	</div>
+	<div>
+		<img style="border:solid rgb(223,234,255)" src="Content/my/images/activity.jpeg"></img>
+	</div>
+	
+	<table align="center" width="100%" class="imagetable">
+		<tr>
+			<td style="border-left:2px solid rgb(94,189,207)">活动介绍:</td>
+		</tr>
+		<tr>
+			<td style="border-left:2px solid rgb(66,99,217)">充值10元送600积分，可多次充值</td>
+		</tr>
+		<tr>
+			<td style="border-left:2px solid rgb(94,189,207)">活动时间：永久</td>
+		</tr>
+		<tr>
+			<table align = "center" width="100%" class="imagetable">
+				<tr>
+					<td style="border-left:2px solid rgb(66,99,217)">输入手机号参与活动：</td>					
+				</tr>
+				<tr>
+					<td><input id="telNum" type="text" /></td>	
+				</tr>
+				<tr>
+					<td align="center"><button align="center" class= "myButton" onclick="mycharge('BS10050000000001')">确定</button></td>	
+				</tr>
+			</table>
+		</tr>
+	</table>
+	
+</body>
+</html>
+

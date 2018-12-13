@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="Content/my/index.css" />
+    <link rel="stylesheet" type="text/css" href="Content/my/style.css" />
+    <script type="text/javascript" src="script/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="script/FormHelper.js"></script>
+	<script type="text/javascript" src="script/getcookie.js"></script>
+	<script type="text/javascript" src="script/mycharge_telNum.js"></script>
+	<script type="text/javascript" src="script/simple_rsa.js"></script>
+	
+</head>
+<body>
+    <ul class="nav">
+        <li class="l_one" align="center">
+            <img src="Content/my/images/index_p_a_03.png" />
+            <input id="telNum" type="text" placeholder="手机号码"/></li>
+        
+        <li class="l_two" align="center">
+            <img src="Content/my/images/index_p_b_06.png" />
+            <input id="password" type="password"  placeholder="密码" ></input>	
+    </ul>
+	<table>
+		<tr>
+			<td align="center">
+			<button id="jump" class="myButton white">登录</button></td>
+		</li>
+		</tr>
+	</table>
+	
+    
+<script>
+	var n,e,s_pwd;
+	window.onload=function(){
+			$("#jump").on("click",function(){
+					do_login();
+				});
+		}
+		
+	function do_login(){	
+		
+		var tel = $("#telNum").val();
+		var pwd = $("#password").val();
+		//alert(RSA_encrypt(123,3213,17));
+		getPublicKey(pwd);
+
+		$.ajax({
+			url:"http://110.64.69.104/IntegralSystemServer/Login.php",
+			dataType:"json",
+			async:true,
+			data:{"tel":tel,"pwd":s_pwd}, //传输加密密码
+			type:"POST",
+			success:function(back){
+				if(back.status==0){
+					setCookie('name',tel,60*24);
+					setCookie('pwd',s_pwd,60*24);	//记住的也是加密的
+					window.location.href="main.html";
+					
+				}
+				else if(back.status==-1){
+					alert("用户不存在！");
+					document.getElementById("telNum").value='';
+					document.getElementById("password").value='';
+				}
+				else if(back.status==-2){
+					alert("密码错误，请重新输入！");		
+					document.getElementById("password").value='';
+				}
+			},
+			error:function(back){
+				alert("网络错误或服务器错误2");
+			}
+			
+		});	
+	}
+	function getPublicKey(pwd){		//获取公钥，加密输入的密码
+	
+		$.ajax({
+			url:"http://110.64.69.104/IntegralSystemServer/encrypt.php",
+			dataType:"json",		
+			async:false,
+			type:"POST",
+			success:function(back){
+				n = back.n;
+				e = back.e;
+				//alert(n);
+				//alert(e);
+				//alert(getMod(pwd,e,n));	//加密过的
+				s_pwd = getMod(pwd,e,n);	//加密过的
+				
+			},
+			error:function(back){
+				alert("网络错误或服务器错误1");
+				return -1;
+			}
+		
+		});
+	}
+	function setCookie(c_name,value,expireminutes){
+		var exdate=new Date();
+		exdate.setTime(exdate.getTime()+expireminutes*1000*60);
+		if(expireminutes!=null){
+			document.cookie=c_name+ "=" +escape(value)+ ";expires="+exdate.toGMTString();
+			//alert("cookie success");
+		}else
+			alert("setCookie failed");
+	}
+
+</script>	   
+</body>
+</html>

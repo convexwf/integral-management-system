@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" /> 
+    <title>个人主页</title>
+    <link rel="stylesheet" href="Content/my/style.css" />
+    <link rel="stylesheet" href="Content/my/index.css" />
+    <link rel="stylesheet" href="Content/my/mui.min.css" />
+    <script type="text/javascript" src="script/jquery-2.0.0.min.js"></script> 
+    <script type="text/javascript" src="script/FormHelper.js"></script>
+	<script type="text/javascript" src="script/getcookie.js"></script>
+</head>
+<body style="background:#ffffff">
+		<div class="mydiv_main">
+			<span style="color:black;">当前用户:</span>
+			<span id="name" style="color:red">无</span>
+			<a id="go_login" href="login.html" style="display:none">>登录</a>
+			<a id="quit_login" href="login.html" style="display:none font:10px">退出登录</a>	
+		</div>
+       <div class="sem-button-bar sem-button-bar--full l-account-info-group-setting">
+            <a class="sem-button">
+                <span>我的话费(元)</span> 
+                <span id="balance" class="l-account-color-red"></span></a>
+            <a class="sem-button">
+                <span>我的流量(M)</span> <span id="flow" class="l-account-color-red"></span> </a>
+            <a class="sem-button" href="#">
+                <span>我的积分</span> <span id="jf" class="l-account-color-red"></span></a>
+        </div>
+       
+        <div class="mydiv">功能专区</div>
+		<table style="width=100%">
+			<tr width=100%>
+				<td><button class="myButton white" onclick="charge()">充值</button></td>
+				<td width=2px color=blue></td>
+				<td><button class="myButton white" onclick="to_exchange()">兑换</button></td>
+				<td width=2px color=blue></td>
+				<td><button class="myButton white" onclick="integral_record()">记录</button></td>
+			</tr>
+		</table><br>
+		
+        <div class="mydiv">活动专区</div>
+		<table>
+			<tr width=100%>
+				<td><button class="myButton white" onclick="to_activty()">充值送双倍积分</button></td>
+			</tr>
+		</table><br/>
+		
+<script type="text/javascript">
+	var tel,integral,dataflow,balance;
+	window.onload = function(){
+		checkCookie();//获取cookie
+		
+		$.ajax({
+			url:"http://110.64.69.104/IntegralSystemServer/query_Account.php",
+			dataType:"json",
+			async:true,
+			data:{"tel":tel},
+			type:"POST",
+			success:function(back){
+				if(back.status==0){
+					integral = back.integral;
+					dataflow = back.dataflow;
+					balance = back.balance;
+					showData();
+				}		
+			}		
+		});	
+	}
+
+	function showData(){	
+		//显示
+		$("#balance").text(balance);
+		$("#flow").text(dataflow);
+		$("#jf").text(integral);	
+	}
+	
+	//其他跳转
+
+	function to_exchange(){
+		window.location.href="final.html";
+	}
+	function charge(){
+			window.location.href="charge.html";		
+	}
+	function to_activty(){
+			window.location.href="activity.html";		
+	}
+	function integral_record(){	
+		window.location.href="integral_record.html";	
+	}
+
+	//checkcookie
+	function checkCookie()
+	{
+		tel=getCookie('name');
+		//alert(tel);
+		if (tel!=null && tel!=""){
+			//document.getElementById("name").value = tel;
+			$("#name").text(tel);
+			var s1 = document.getElementById("quit_login");
+			s1.style.display = "inline";
+		}
+		else 
+		{
+			var s = document.getElementById("go_login");
+			s.style.display = "inline";
+		}
+	}
+	
+</script>
+</body>
+
+</html>

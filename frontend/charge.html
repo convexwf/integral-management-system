@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>充值</title>
+    <link rel="stylesheet" href="Content/my/style.css" />
+    <link rel="stylesheet" href="Content/my/index.css" />
+    <link rel="stylesheet" href="Content/my/mui.min.css" />
+    <script type="text/javascript" src="script/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="script/FormHelper.js"></script>
+	<script type="text/javascript" src="script/mycharge_telNum.js"></script>
+	<script type="text/javascript" src="script/getcookie.js"></script>
+</head>
+<body style="background:#ffffff">
+	<div class="mydiv_main">手机号码：</div><input id="telNum" type="text"/>
+
+	<div class="mydiv">充话费</div>
+
+    <div style="margin:1px 1px 1px 1px">
+		<button class="part1_1" onclick="mycharge('BS10020000000001')">¥50元</button>
+		<button class="part1_2" onclick="mycharge('BS10020000000002')">¥100元</button>
+		<button class="part1_3" onclick="mycharge('BS10020000000003')">¥200元</button>
+		<button class="part1_4" onclick="mycharge('BS10020000000004')">¥300元</button>
+		<button class="part1_5" onclick="mycharge('BS10020000000005')">¥500元</button>
+    </div>
+	
+
+    <div class="mydiv">充流量</div>
+
+    <div  style="margin:1px 1px 1px 1px" >
+		<button class="part1_1" onclick="mycharge('BS10040000000001')">1G</button>
+		<button class="part1_2" onclick="mycharge('BS10040000000002')">2G</button>
+		<button class="part1_3" onclick="mycharge('BS10040000000003')">5G</button>
+    </div>
+	
+    <div class="mydiv" >办套餐</div>
+	<div style="margin:1px 1px 1px 1px">
+		<button class="part1_1" onclick="mycharge('BS10030000000001')">38元套餐</div>
+		<button class="part1_2" onclick="mycharge('BS10030000000002')">58元套餐</div>
+		<button class="part1_3" onclick="mycharge('BS10030000000003')">88元套餐</div>
+		<button class="part1_4" onclick="mycharge('BS10030000000004')">128元套餐</div>
+		<button class="part1_5" onclick="mycharge('BS10030000000005')">158元套餐</div>
+    </div>
+<script>
+	var tel;
+	window.onload=function(){
+		checkCookie();
+		document.getElementById("telNum").value = tel;
+
+	}
+	function checkCookie()
+	{
+		tel=getCookie('name');
+		//alert(tel);
+		if (tel!=null && tel!=""){
+			return 1;
+		}
+		else{
+			alert("当前登录已经失效，请重新登录");
+			window.location.href = "login.html";
+			return -1;
+		
+		}		
+	}
+</script>	
+</body>
+</html>
