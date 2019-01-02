@@ -1,0 +1,896 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  font-family: "Microsoft YaHei";
+}
+body input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  margin: 0;
+}
+body button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  margin: 0;
+}
+
+.banner_img1 ul {
+  width: 400%;
+  margin-left: -320px;
+}
+.banner_img1 ul li {
+  width: 320px;
+}
+.banner_img1 ul li a img {
+  width: 320px;
+}
+
+.top_border {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 40px;
+  font-family: "Microsoft YaHei";
+  text-align: center;
+  padding-right: 60px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #53B373;
+}
+.top_border .back {
+  display: inline-block;
+  float: left;
+}
+.top_border .back:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 13px;
+  left: 18px;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+.top_border a {
+  text-decoration: none;
+  display: inline-block;
+  height: 40px;
+  float: right;
+  width: 60px;
+}
+.top_border a img {
+  position: relative;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+}
+#login {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding-top: 10px;
+  height: 40px;
+  width: 40px;
+  background: url(../images/login-icon.png) 50% 7px no-repeat;
+  -moz-background-size: 18px;
+  -o-background-size: 18px;
+  -webkit-background-size: 18px;
+  background-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei";
+}
+#login span {
+  -moz-transform: scale(0.58, 0.58);
+  -ms-transform: scale(0.58, 0.58);
+  -webkit-transform: scale(0.58, 0.58);
+  transform: scale(0.58, 0.58);
+  display: block;
+  font-size: 12px;
+  transform-origin: 50%;
+}
+
+#logout {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding-top: 10px;
+  height: 40px;
+  width: 40px;
+  background: url(../images/quit.png) 50% 7px no-repeat;
+  -moz-background-size: 18px;
+  -o-background-size: 18px;
+  -webkit-background-size: 18px;
+  background-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei";
+}
+#logout span {
+  -moz-transform: scale(0.58, 0.58);
+  -ms-transform: scale(0.58, 0.58);
+  -webkit-transform: scale(0.58, 0.58);
+  transform: scale(0.58, 0.58);
+  display: block;
+  font-size: 12px;
+  transform-origin: 50%;
+}
+.bottom_order {
+  clear: left;
+  height: 40px;
+  padding-bottom: 5px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.bottom_order i {
+  width: 80%;
+  height: 20px;
+  display: inline-block;
+  border-bottom: 1px solid #cacaca;
+}
+.bottom_order span {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  margin-left: -60px;
+  width: 120px;
+  background: #f2f2f2;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  color: #666;
+}
+
+.load-more {
+  padding: 0 10px;
+  text-align: center;
+  overflow: hidden;
+  height: 40px;
+  line-height: 20px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.loading img {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
+.page_bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  background: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+  height: 50px;
+  width: 100%;
+}
+.page_bottom li {
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+}
+.page_bottom li span {
+  line-height: 85px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.page_bottom a {
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+  text-decoration: none;
+}
+.page_bottom .come_home {
+  background: url(../images/homepage.png) 50% 30% no-repeat;
+  color: #858585;
+  -moz-background-size: 25px;
+  -o-background-size: 25px;
+  -webkit-background-size: 25px;
+  background-size: 25px;
+}
+.page_bottom .fw {
+  background: url(../images/heart_search.png) 50% 30% no-repeat;
+  color: #858585;
+  -moz-background-size: 25px;
+  -o-background-size: 25px;
+  -webkit-background-size: 25px;
+  background-size: 25px;
+}
+.page_bottom .bag {
+  background: url(../images/bag_icon.png) 50% 30% no-repeat;
+  color: #858585;
+  -moz-background-size: 24px;
+  -o-background-size: 24px;
+  -webkit-background-size: 24px;
+  background-size: 24px;
+}
+.page_bottom .myself {
+  background: url(../images/man_icon.png) 50% 30% no-repeat;
+  color: #858585;
+  -moz-background-size: 23px;
+  -o-background-size: 23px;
+  -webkit-background-size: 23px;
+  background-size: 23px;
+}
+
+.backHome {
+  display: inline-block;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 55px;
+  left: 1%;
+  z-index: 1200;
+  background: url(../images/home.png) 50% no-repeat;
+  -moz-background-size: 48px;
+  -o-background-size: 48px;
+  -webkit-background-size: 48px;
+  background-size: 48px;
+}
+
+.shopping_car {
+  display: inline-block;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 55px;
+  right: 1%;
+  z-index: 1200;
+  background: url(../images/shop.png) 50% no-repeat;
+  -moz-background-size: 48px;
+  -o-background-size: 48px;
+  -webkit-background-size: 48px;
+  background-size: 48px;
+}
+
+.goTop {
+  display: inline-block;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 110px;
+  right: 1%;
+  z-index: 1200;
+  background: url(../images/top.png) 50% no-repeat;
+  -moz-background-size: 48px;
+  -o-background-size: 48px;
+  -webkit-background-size: 48px;
+  background-size: 48px;
+}
+
+.add_collect {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 500;
+  margin-top: -20px;
+  margin-left: -90px;
+  width: 200px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #fff;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: rgba(102, 102, 102, 0.8);
+}
+
+.mask {
+  position: fixed;
+  _position: absolute;
+  background-color: #666;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.prod {
+  width: 100%;
+  padding: 0px 5% 60px;
+  font-size: 15px;
+  color: #666;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.prod img {
+  width: 100%;
+}
+.prod .img_font {
+  padding: 10px 0;
+}
+.prod .img_font p {
+  padding-top: 5px;
+  line-height: 22px;
+}
+.prod .details {
+  padding: 20px 0 10px 0;
+  height: 100%;
+}
+.prod .details p {
+  margin-bottom: 15px;
+}
+.prod table {
+  width: 100%;
+}
+.prod .sale_service {
+  padding: 20px 0 10px 0;
+}
+.prod .sale_service p {
+  margin-bottom: 15px;
+}
+.prod .sale_service p label {
+  font-weight: bold;
+}
+.prod .parameter {
+  width: 100%;
+  padding: 20px 0 10px 0;
+}
+.prod .parameter table {
+  width: 100%;
+}
+.prod .parameter table tr {
+  line-height: 15px;
+}
+.prod .parameter table tr th {
+  padding: 10px 0px 10px 5%;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+.prod .parameter table td {
+  border: 1px solid #ddd;
+  padding: 10px 0px 10px 5%;
+}
+.prod .parameter table td:first-child {
+  background: #f9f9f9;
+  width: 40%;
+}
+
+.longer {
+  width: 250px;
+  display: none;
+  text-align: center;
+  color: #fff;
+  height: 40px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  border-radius: 6px;
+  line-height: 40px;
+  background: rgba(102, 102, 102, 0.8);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -125px;
+}
+
+.cannot_use {
+  background: #b0afaf;
+  color: #fff;
+}
+
+.dele_choose {
+  display: none;
+  z-index: 99999;
+  width: 85%;
+  height: 130px;
+  border-radius: 6px;
+  position: fixed;
+  top: 25%;
+  left: 7.5%;
+  background: #fff;
+}
+.dele_choose .first_div {
+  width: 100%;
+  color: #666;
+  height: 90px;
+  line-height: 110px;
+  text-align: center;
+  font-size: 18px;
+}
+.dele_choose .yes_no {
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid #e3e4e8;
+  text-align: center;
+  line-height: 37px;
+  font-size: 18px;
+}
+.dele_choose .yes_no .no {
+  display: inline-block;
+  width: 50%;
+  height: 40px;
+  color: #363636;
+  font-size: 18px;
+  line-height: 40px;
+  background: #f1f1f1;
+  border-bottom-left-radius: 6px;
+  float: left;
+  font-family: "Microsoft YaHei";
+}
+.dele_choose .yes_no .yes {
+  display: inline-block;
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  background: #ff5a00;
+  font-size: 18px;
+  color: #fff;
+  border-bottom-right-radius: 6px;
+  font-family: "Microsoft YaHei";
+}
+
+.notice {
+  display: none;
+  z-index: 99999;
+  width: 85%;
+  height: 130px;
+  border:1px solid #E2E2E7;
+  position: fixed;
+  top: 25%;
+  left: 7.5%;
+  background: #fff;
+}
+.notice .head_div {
+  width: 100%;
+  color: #666;
+  height: 90px;
+  text-align: center;
+  border:1px solid #E2E2E7;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 1px solid #e3e4e8;
+}
+.notice .head_div p {
+  width: 100%;
+  position: relative;
+  bottom: -43px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.notice .head_div p span {
+  color: #ff5a00;
+}
+.notice .ok {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 18px;
+  background: #C2C2C7;
+  border: 1px solid #C2C2C7;
+  
+  font-family: "Microsoft YaHei";
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.draw_wrap {
+  display: none;
+  width: 100%;
+  position: fixed;
+  z-index: 99999;
+  top: 22%;
+  padding: 0 12.66667%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.draw_wrap .top-title {
+  position: relative;
+}
+.draw_wrap .top-title .close {
+  position: absolute;
+  top: 26px;
+  right: 8px;
+  width: 25px;
+  height: 25px;
+  background: url(../images/closeBtn.png) 50% no-repeat;
+  -moz-background-size: 25px;
+  -o-background-size: 25px;
+  -webkit-background-size: 25px;
+  background-size: 25px;
+}
+.draw_wrap .top-title img {
+  display: block;
+  width: 100%;
+}
+.draw_wrap .awardNotice {
+  position: relative;
+  background: #fff;
+  padding: 20px 0px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  -webkit-background-size: 100%;
+}
+.draw_wrap .awardNotice .blank {
+  width: 100%;
+  height: 40px;
+}
+.draw_wrap .awardNotice .congratulations {
+  font-size: 15px;
+  color: #504e53;
+  line-height: 80px;
+  text-align: center;
+  white-space: nowrap;
+}
+.draw_wrap .awardNotice .con-sec {
+  font-size: 12px;
+  color: #a33c09;
+  line-height: 22px;
+  text-align: center;
+}
+.draw_wrap .awardNotice .messageWinner {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.draw_wrap .awardNotice .messageWinner .awardImg {
+  display: table;
+  text-align: center;
+  margin: 10px auto 0px;
+  padding: 0 15%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.draw_wrap .awardNotice .messageWinner .awardImg img {
+  width: 100%;
+}
+.draw_wrap .awardNotice .messageWinner .winnerNumber {
+  margin-bottom: 5px;
+  width: 100%;
+  line-height: 25px;
+  height: 25px;
+  padding: 10px;
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #fd911d;
+}
+.draw_wrap .awardNotice .messageWinner .code {
+  margin-bottom: 5px;
+  width: 100%;
+  display: inline-block;
+  line-height: 25px;
+  font-size: 12px;
+  background: #e5e5e5;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-family: "Microsoft YaHei";
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.draw_wrap .awardNotice .messageWinner .code dt {
+  padding-left: 20px;
+  color: #666;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  border-bottom: 1px solid #FFF;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.draw_wrap .awardNotice .messageWinner .code dd {
+  padding-left: 20px;
+  text-align: left;
+  color: #666;
+  width: 100%;
+  height: 25px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.draw_wrap .awardNotice .messageWinner .send {
+  width: 100%;
+  height: 27px;
+  line-height: 27px;
+  background: #e71f19;
+  border: none;
+  font-size: 15px;
+  margin-top: 5px;
+  color: #fff;
+  font-family: "Microsoft YaHei";
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv {
+  position: relative;
+  margin-bottom: 3px;
+  overflow: hidden;
+  height: 25px;
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv span {
+  text-align: left;
+  width: 48%;
+  height: 25px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #a2a2a2;
+  background: url(../images/options_03.jpg) no-repeat;
+  float: left;
+  background-size: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  -webkit-background-size: 100%;
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv .winnerCity {
+  margin-right: 2%;
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv .cityOption {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 48%;
+  height: 25px;
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv .cityOption select {
+  padding-left: 5px;
+  width: 100%;
+  height: 25px;
+  font-size: 12px;
+  line-height: 23px;
+  color: #a2a2a2;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  border: 1px solid #fd911d;
+  background-color: transparent;
+  font-family: "Microsoft YaHei";
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv .proOption {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 48%;
+  height: 25px;
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv .proOption select {
+  padding-left: 5px;
+  width: 100%;
+  height: 25px;
+  font-size: 12px;
+  line-height: 23px;
+  color: #a2a2a2;
+  border: 1px solid #fd911d;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-family: "Microsoft YaHei";
+}
+.draw_wrap .awardNotice .messageWinner .zoneDiv .winnerPro {
+  margin-left: 2%;
+}
+.draw_wrap .awardNotice #noRecord {
+  width: 100%;
+}
+.draw_wrap .awardNotice #noRecord .noRecord {
+  margin: 40px auto 20px;
+  font-size: 15px;
+  text-align: center;
+  color: #a33c09;
+}
+.draw_wrap .awardNotice #noRecord .sendAgain {
+  width: 80%;
+  height: 27px;
+  line-height: 27px;
+  background: #e71f19;
+  border: none;
+  font-size: 15px;
+  color: #fff;
+  font-family: "Microsoft YaHei";
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.draw_wrap .awardNotice .awardIMGTips {
+  width: 55px;
+  height: 58px;
+  display: table;
+  text-align: center;
+  margin: 40px auto 0px;
+}
+.draw_wrap .awardNotice .awardIMGTips span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.draw_wrap .awardNotice .awardIMGTips span img {
+  width: 100%;
+}
+.draw_wrap .awardNotice .awardIMG {
+  width: 80px;
+  height: 80px;
+  display: table;
+  text-align: center;
+  margin: 40px auto 0px;
+}
+.draw_wrap .awardNotice .awardIMG span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.draw_wrap .awardNotice .awardIMG span img {
+  width: 100%;
+}
+.draw_wrap .draw_title {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+  z-index: 2;
+  top: 20px;
+  left: 0px;
+  background: url(../images/title_03.png) 50% no-repeat;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+.maskTwo {
+  position: fixed;
+  _position: absolute;
+  background: url(../images/mask_02.png) no-repeat #000;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.myRecord {
+  width: 80%;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.color333 {
+  color: #333 !important;
+}
+
+.buttonDiv {
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  -moz-border-radius: 0 0 10px 10px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 10px 10px;
+}
+.buttonDiv .sure {
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 200px;
+  height: 35px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 35px;
+  background: #764fac;
+  box-shadow: #68419e 0px 5px;
+  border: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-family: "Microsoft YaHei";
+}

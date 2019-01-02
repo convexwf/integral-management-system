@@ -1,0 +1,101 @@
+.wmask,.maskError{position:fixed;_position:absolute;top:0;left:0;z-index:2000;width:100%;height:100%;background:#000;border:0;filter:alpha(opacity=20);opacity:0.20;}
+.loading {
+    position: fixed;
+    _position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+    z-index: 1001;
+    width: 32px;
+    height: 32px;
+    border: 0; }
+
+.limit_num {
+    display: none;
+    z-index: 99999;
+    width: 85%;
+    height: 175px;
+    border-radius: 6px;
+    position: fixed;
+    top: 25%;
+    left: 7.5%;
+    background: #fff;
+}
+.limit_num .head_div {
+    width: 100%;
+    color: #a1a1a1;
+    height: 95px;
+    text-align: center;
+}
+.limit_num .head_div p {
+    width: 100%;
+    position: relative;
+    bottom: -43px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.limit_num .head_div p span {
+    color: #ff5a00;
+}
+.limit_num .yes_ok {
+    width: 100%;
+    height: 64px;
+    line-height: 37px;
+    border-top: 1px solid #d6d6d6;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.limit_num .yes_ok .ok {
+    display: inline-block;
+    width: 90px;
+    height: 35px;
+    background: #ff5a00;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+}
+
+.tips-fail {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    position: fixed;
+    left: 325px;
+    top: 50px;
+    z-index: 99999;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    width: 360px;
+}
+.tips-fail .top {
+    height: 40px;
+    background: url("../images/tipsTitle-1.png") no-repeat; }
+.tips-fail .top .title {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    float: left;
+    margin-left: 20px; }
+.tips-fail .top .close {
+    display: inline-block;
+    width: 12px;
+    line-height: 12px;
+    float: right;
+    margin: 14px 20px 0 0;
+    cursor: pointer; }
+.tips-fail .content {
+    height: 140px;
+    line-height: 140px;
+    font-size: 18px;
+    color: #666666;
+    font-weight: bold;
+    text-align: center; }

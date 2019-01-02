@@ -1,0 +1,358 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  font-family: "Microsoft YaHei";
+  background: #f2f2f2;
+}
+body a {
+  text-decoration: none;
+}
+body ul {
+  list-style: none;
+}
+
+.foods_list .top-nav {
+  width: 100%;
+  background: #f2f2f2;
+  #background-color:#c3dde0;
+  padding-top: 5px;
+}
+.foods_list .search_div {
+  width: 100%;
+  margin-bottom: 5px;
+  height: 30px;
+  position: relative;
+}
+.foods_list .search_div img {
+  position: absolute;
+  right: 82px;
+  top: 8px;
+  display: none;
+}
+.foods_list .search_div .seach {
+  position: absolute;
+  text-decoration: none;
+  color: #666;
+  width: 70px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  background: url(../images/search_tu.png) 50% no-repeat;
+  -moz-background-size: 70px;
+  -o-background-size: 70px;
+  -webkit-background-size: 70px;
+  background-size: 70px;
+  font-size: 13px;
+  right: 1%;
+  top: 0px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.foods_list .search_div .search_goods {
+  display: block;
+  border-radius: 4px;
+  background: url(../images/SearchIcon.png) 10px 50% no-repeat #fff;
+  -moz-background-size: 15px;
+  -o-background-size: 15px;
+  -webkit-background-size: 15px;
+  background-size: 15px;
+  font-size: 13px;
+  padding-left: 30px;
+  padding-right: 100px;
+  color: #BDBDBC;
+  width: 98%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 30px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+}
+.foods_list .order_type {
+  margin-bottom: 5px;
+  height: 45px;
+  width: 100%;
+}
+.foods_list .order_type li {
+  height: 45px;
+  background: #fff;
+  width: 33.3%;
+  float: left;
+  text-align: center;
+  list-style: none;
+  font-size: 14px;
+  color: #666;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.foods_list .order_type li p {
+  line-height: 45px;
+}
+.foods_list .order_type .order_down {
+  width: 79px;
+  margin-left: 15px;
+  text-align: left;
+  background: url(../images/1.png) 59px 50% no-repeat;
+  -moz-background-size: 11px;
+  -o-background-size: 11px;
+  -webkit-background-size: 11px;
+  background-size: 11px;
+}
+.foods_list .order_type .no_class {
+  width: 79px;
+  margin-left: 15px;
+  text-align: left;
+  background: url(../images/3.png) 59px 50% no-repeat;
+  -moz-background-size: 11px;
+  -o-background-size: 11px;
+  -webkit-background-size: 11px;
+  background-size: 11px;
+}
+.foods_list .order_type .order_up {
+  width: 79px;
+  margin-left: 15px;
+  text-align: left;
+  background: url(../images/2.png) 59px 50% no-repeat;
+  -moz-background-size: 11px;
+  -o-background-size: 11px;
+  -webkit-background-size: 11px;
+  background-size: 11px;
+}
+.foods_list .order_type .go_head {
+  width: 103px;
+  margin: 0 auto;
+  background: url(../images/down_arrow11.png) 84px 50% no-repeat;
+  -moz-background-size: 11px;
+  -o-background-size: 11px;
+  -webkit-background-size: 11px;
+  background-size: 11px;
+}
+.foods_list .order_type .go_no {
+  width: 103px;
+  margin: 0 auto;
+  background: url(../images/down_arrow22.png) 84px 50% no-repeat;
+  -moz-background-size: 11px;
+  -o-background-size: 11px;
+  -webkit-background-size: 11px;
+  background-size: 11px;
+}
+.foods_list .order_type .condition {
+  padding: 0px 15px 0px;
+  width: 79px;
+  float: right;
+  background: url(../images/xsicon1.png) 84px 50% no-repeat;
+  -moz-background-size: 11px;
+  -o-background-size: 11px;
+  -webkit-background-size: 11px;
+  background-size: 11px;
+}
+.foods_list .order_type .condition_sec {
+  padding: 0px 15px 0px;
+  width: 79px;
+  float: right;
+  background: url(../images/xsicon.png) 84px 50% no-repeat;
+  -moz-background-size: 11px;
+  -o-background-size: 11px;
+  -webkit-background-size: 11px;
+  background-size: 11px;
+}
+.foods_list .pro_list {
+  width: 100%;
+  overflow:hidden;
+}
+.foods_list .pro_list .div_left {
+  float: left;
+  width: 50%;
+  border-right: 2.5px solid #f2f2f2;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.foods_list .pro_list .div_right {
+  float: right;
+  width: 50%;
+  border-left: 2.5px solid #f2f2f2;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.foods_list .pro_list a {
+  width: 100%;
+  color: #333;
+  background: #fff;
+  margin-bottom: 5px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  text-decoration: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.foods_list .pro_list a img {
+  width: 100%;
+}
+.foods_list .pro_list a .pro_nm {
+  margin-left: 10px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  text-align: left;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.foods_list .pro_list a .int_jf {
+  color: #f06965;
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Microsoft YaHei";
+  text-align: left;
+  margin-bottom: 5px;
+}
+.foods_list .pro_list .out_time {
+  text-decoration: line-through;
+  font-size: 13px;
+  color: #999;
+  margin-left: 5px;
+  line-height: 18px;
+}
+
+.choose_condition {
+  width: 100%;
+  background: #fff;
+}
+.choose_condition .kinds_choose .background {
+  background: #f8c344;
+  color: #fff;
+}
+.choose_condition .kinds_choose p {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  color: #666;
+}
+.choose_condition .kinds_choose p span {
+  display: inline-block;
+  padding: 3px 7px;
+  border-radius: 5px;
+  width: 65px;
+  text-align: center;
+  border: 1px solid #8c8c8c;
+  margin: 18px 15px 0 15px;
+}
+.choose_condition .kinds_choose p label {
+  display: inline-block;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+.choose_condition .kinds_choose .kinds_detail {
+  width: 100%;
+  color: #666;
+  padding: 0 10px;
+  border-bottom: 1px solid #ddd;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.choose_condition .kinds_choose .kinds_detail span {
+  padding: 3px 7px;
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.choose_condition .ok_choose {
+  width: 100%;
+  height: 50px;
+  background: #ed6d00;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+}
+
+.not-find {
+  display: none;
+}
+.not-find .nogift {
+  width: 45%;
+  margin: 20% auto 10px;
+}
+.not-find .nogift img {
+  width: 100%;
+}
+.not-find p {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: "Microsoft YaHei";
+}
